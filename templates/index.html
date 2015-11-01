@@ -96,8 +96,11 @@
             <article>
                 <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a>
                 <section>
+                {#
                     posted in
                 <a href="{{ SITEURL }}/categories.html#{{ article.category.slug }}-ref">{{ article.category }}</a>
+                #}
+                {{ article.summary|striptags|e }}
                 <div class="recent-posts-time">
                 <time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
                 </div>
